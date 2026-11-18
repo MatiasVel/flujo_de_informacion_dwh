@@ -1,0 +1,14 @@
+{
+  "name": "flujo-de-informacion-dwh",
+  "version": "1.0.0",
+  "description": "Simulador web del flujo de información desde la carga operativa hasta los tableros de Power BI, pasando por un Data Warehouse en PostgreSQL.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node scripts/servidor.mjs 8080",
+    "test": "node --test tests/*.test.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simulador del flujo DWH a Power BI</title>
+  <meta name="description" content="Simulador educativo del flujo de información desde la carga operativa hasta los tableros de Power BI, pasando por un Data Warehouse en PostgreSQL.">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="fuentes/roboto-condensado-var.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="fuentes/fira-sans-regular.woff" as="font" type="font/woff" crossorigin>
+  <link rel="stylesheet" href="css/estilos.css">
+  <script type="module" src="js/app.js"></script>
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+  <header class="barra" id="barra"></header>
+  <main id="contenido" tabindex="-1">
+    <div class="cargando" role="status">
+      <p>Preparando la base de datos de demostración…</p>
+    </div>
+  </main>
+  <footer class="pie" id="pie"></footer>
+  <div class="avisos" id="avisos" aria-live="polite" aria-atomic="false"></div>
+  <div class="tooltip" id="tooltip" role="tooltip" hidden></div>
+  <noscript>
+    <p class="sin-js">Este simulador necesita JavaScript habilitado para funcionar.</p>
+  </noscript>
+</body>
+</html>
