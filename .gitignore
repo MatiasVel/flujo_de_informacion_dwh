@@ -1,0 +1,13 @@
+# Dependencias y archivos generados (el proyecto no usa dependencias, pero por las dudas)
+node_modules/
+.netlify/
+
+# Sistema operativo y editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Variables de entorno y credenciales: nunca se suben
+.env
+.env.*
