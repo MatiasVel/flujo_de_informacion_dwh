@@ -11,7 +11,14 @@ const CLAVE = 'actual';
 
 let estado = null;
 let temporizador = null;
-let disponible = typeof indexedDB !== 'undefined';
+// En algunos marcos aislados, sólo consultar indexedDB ya lanza un error de seguridad.
+let disponible = (() => {
+  try {
+    return typeof indexedDB !== 'undefined' && indexedDB !== null;
+  } catch {
+    return false;
+  }
+})();
 const oyentes = new Set();
 
 function abrir() {

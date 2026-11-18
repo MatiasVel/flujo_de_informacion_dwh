@@ -29,8 +29,9 @@ createServer(async (pedido, respuesta) => {
       'Content-Type': TIPOS[extname(archivo)] ?? 'application/octet-stream',
       'Cache-Control': 'no-store',
       // La misma política de seguridad que publica Netlify (ver netlify.toml).
-      'Content-Security-Policy': "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'",
+      'Content-Security-Policy': "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors *",
       'X-Content-Type-Options': 'nosniff',
+      'Access-Control-Allow-Origin': '*',
     });
     respuesta.end(contenido);
   } catch {
