@@ -1,0 +1,26 @@
+# Configuración de Netlify.
+# El sitio es estático (HTML, CSS y JavaScript sin dependencias): no hay paso de compilación.
+# El "comando de build" sólo corre las pruebas del motor; si alguna falla, Netlify no publica.
+
+[build]
+  publish = "public"
+  command = "node --test tests/*.test.mjs"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Encabezados de seguridad para todo el sitio.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
+
+# Las fuentes no cambian: se pueden guardar en caché por un año.
+[[headers]]
+  for = "/fuentes/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
